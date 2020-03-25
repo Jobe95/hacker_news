@@ -10,7 +10,7 @@ class CommentList extends StatelessWidget {
 
   CommentList({this.comments});
 
-  String _FormatCommentText(String text) {
+  String _formatCommentText(String text) {
     final formattedText = unescape.convert(text ?? '');
     return formattedText.isNotEmpty
         ? formattedText.substring(0, min(200, formattedText.length))
@@ -37,7 +37,7 @@ class CommentList extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
           ),
-          title: Text(_FormatCommentText(comment.title)),
+          title: Text(_formatCommentText(comment.title)),
         );
       },
     );
